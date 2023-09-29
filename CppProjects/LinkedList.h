@@ -1,6 +1,10 @@
+//Everything was coded by me except the given class (eg. "template<typename T> class LinkedList {}" was given). 
+//Some method declarations may have been a given such as "add", or "to_string" but the actual body of the methods were written by me. 
+//Credit: Professor William Iverson at Bellevue College, WA. 
+
 #pragma once
 #include "Node.h"
-// template linked list class
+
 template<typename T>
 class LinkedList
 {
