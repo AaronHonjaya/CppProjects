@@ -1,4 +1,5 @@
 //Only the title of the class and the template was given to me (eg "template<typename E> class ArrayList{}".) 
+//Some method declarations may have also been a given such as "void resize(int increase)", but the actual body/function was written by me. 
 //Credit : Professor William Iverson at Bellevue College, WA. 
 
 
@@ -39,9 +40,8 @@ private:
 	int arraySize = 0;
 	int arraySize2 = 1;
 
-	E* list; // array starts at size 10
-	void resize(int increase); // can resize
-	// add helpers, int size, etc...
+	E* list; 
+	void resize(int increase);
 };
 
 
