@@ -1,13 +1,3 @@
-
-
-// Binary Search Tree (TreeSet)
-// Code from Liang, C++ Data Structures
-//
-// changed significantly by W.P. Iverson
-// Bellevue College, WA
-// Spring 2023
-
-
 //only the template and class were given here (eg "template <typename T> class Iterator : public std::iterator<std::forward_iterator_tag, T>")
 //Credit: Professor William Iverson at Bellevue College, WA
 #pragma once
