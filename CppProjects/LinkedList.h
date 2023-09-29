@@ -10,7 +10,12 @@ class LinkedList
 {
 public:
     LinkedList();
+
     LinkedList(const LinkedList<T>& rhs);
+    ~LinkedList();
+    void operator=(const LinkedList<T>& rhs);
+
+
     void addLast(T element);
     void add(T element);
     void printList() const;
@@ -21,7 +26,6 @@ public:
     bool removeAll(LinkedList<T>& otherList);
     bool retainAll(LinkedList<T>& otherList);
 
-    LinkedList<T>& operator=(LinkedList<T>& rhs);
 
     T operator[](int index) {
         Node<T>* current = head;
@@ -37,18 +41,21 @@ public:
         temp->addAll(rhs);
         return *temp;
     }
+
     friend LinkedList<T>& operator-(LinkedList<T>& lhs, LinkedList<T>& rhs) {
         LinkedList<T>* temp = new LinkedList<T>;
         temp->addAll(lhs);
         temp->removeAll(rhs);
         return *temp;
     }
+
     friend LinkedList<T>& operator^(LinkedList<T>& lhs, LinkedList<T>& rhs) {
         LinkedList<T>* temp = new LinkedList<T>;
         temp->addAll(lhs);
         temp->retainAll(rhs);
         return *temp;
     }
+
     void remove(T element);
     int lastIndexOf(T element);
     bool contains(T element) {
@@ -101,6 +108,26 @@ LinkedList<T>::LinkedList(const LinkedList<T>& rhs) {
         }
         temp = temp->getNext();
     }
+}
+
+template<typename T>
+LinkedList<T>::~LinkedList() {
+    Node<T>* curr = head;
+    Node<T>* temp;
+
+    for (int i = 0; i < size; i++) {
+        temp = curr->getNext();
+        delete curr;
+        curr = temp;
+    }
+}
+
+
+template<typename T>
+void LinkedList<T>::operator=(const LinkedList<T>& rhs) {
+    clear();
+    addAll(rhs);
+    cout << "copy assignment operator worked";
 }
 
 template<typename T>
@@ -240,12 +267,8 @@ void LinkedList<T>::clear() {
 
 }
 
-template<typename T>
-LinkedList<T>& LinkedList<T>::operator=(LinkedList<T>& rhs) {
-    clear();
-    addAll(rhs);
-    return *this;
-}
+
+
 
 template<typename T>
 int LinkedList<T>::lastIndexOf(T element) {

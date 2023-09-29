@@ -1,6 +1,11 @@
 #pragma once
 #pragma once
-// Original code from Daniel Liang (2003)
+
+//This was the listnode framework given to me by my Professor, not something I wrote.
+//Credit is below. 
+
+
+// Original code from Daniel Liang (2003) Georgia Southern University
 // now animated at yongdanielliang.github.io/animation/web/LinkedList.html
 // 
 // Extensively modified by W.P. Iverson

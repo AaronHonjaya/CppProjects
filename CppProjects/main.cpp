@@ -1,15 +1,16 @@
-#include "BST_Iterator.h"
+//#include "BST_Iterator.h"
 #include <string>
-//#include "TreeIterator.h"
-
+#include "Tree.h"
+#include <iostream>
+#include "LinkedList.h"
+#include "ArrayList.h"
 
 using namespace std;
 
 // CS212, Spring 2023
 // W.P. Iverson, instructor
 
-int main()
-{
+void testBSTIterator() {
 	// Create a tree for strings
 	TreeSet<string> tree;
 
@@ -48,6 +49,35 @@ int main()
 		++iter;
 	}
 
+};
+
+
+void testLinkedList() {
+	LinkedList<int> list;
+	list.add(1);
+	list.add(2);
+	LinkedList<int> list2 = list;
+	list2.printList();
+	list.remove(1);
+	cout << endl;
+	list2.printList();
+
+	
+};
+
+void testArrayList() {
+	ArrayList<int> arr;
+	arr.add(1);
+	arr.add(2);
+	ArrayList<int> arr2 = arr;
+	cout << arr2.to_string() << endl;
+	arr2.addAll(arr);
+	cout << arr2.to_string() << endl;
+}
+
+int main()
+{
+	testArrayList();
 
 
 
@@ -58,3 +88,4 @@ int main()
 
 	return 0;
 }
+

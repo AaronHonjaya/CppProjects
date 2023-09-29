@@ -1,5 +1,6 @@
-//This is the BST framework that was given to me by the Professor. Credit is below. 
-//I did added a visited boolean to the TreeNode struct (labeled with comments). Everything else was given. 
+//This is not something I wrote.
+//The whole BST framework that was given to me by the Professor. 
+//Credit is below. 
 
 // Binary Search Tree (TreeSet)
 // Code from Daniel Liang, C++ Data Structures, Georgia Southern University
@@ -9,30 +10,10 @@
 // Spring 2023
 
 #pragma once
-import <BST_iterator>
+#include "TreeNode.h"
+#include "BST_Iterator.h""
 
-template<typename T>
-class TreeNode
-{
-public:
-    T element; 
-    TreeNode<T>* left;
-    TreeNode<T>* right; 
 
-    //added
-    bool visited;
-
-    TreeNode(T element) 
-    {
-        this->element = element;
-        left = NULL;
-        right = NULL;
-
-        //added
-        visited = false;
-        
-    }
-};
 
 
 template <typename T>

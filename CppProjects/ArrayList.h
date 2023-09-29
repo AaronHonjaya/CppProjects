@@ -21,9 +21,14 @@ class ArrayList
 public:
 	ArrayList();
 	ArrayList(int);
+
+	ArrayList(const ArrayList<E>& rhs);
+	~ArrayList();
+	void operator=(const ArrayList<E>& rhs);
+
 	void add(E);
 	void add(int, E);
-	void addAll(ArrayList<E>);
+	void addAll(const ArrayList<E>&);
 	int size() const;
 	void clear();
 	bool contains(E) const;
@@ -37,14 +42,11 @@ public:
 private:
 	int internalIndex = 0;
 	int arraySize = 0;
-	int arraySize2 = 1;
 
 	E* list; 
 	void resize(int increase);
 };
 
-
-using namespace std;
 
 template<typename E>
 ArrayList<E>::ArrayList() {
@@ -55,6 +57,25 @@ template<typename E>
 ArrayList<E>::ArrayList(int size) {
 	arraySize = size;
 	list = new E[arraySize];
+}
+
+template<typename E>
+ArrayList<E>::ArrayList(const ArrayList<E>& rhs)
+{
+	addAll(rhs);
+}
+
+template<typename E>
+ArrayList<E>::~ArrayList()
+{
+	delete[] list;
+}
+
+template<typename E>
+void ArrayList<E>::operator=(const ArrayList<E>& rhs)
+{
+	this->clear();
+	this->addAll(rhs);
 }
 
 
@@ -93,7 +114,7 @@ void ArrayList<E>::remove(int index) {
 
 
 template<typename E>
-void ArrayList<E>::addAll(ArrayList<E> otherArray) {
+void ArrayList<E>::addAll(const ArrayList<E>& otherArray) {
 	int otherSize = otherArray.size();
 	int oldArraySize = arraySize;
 	resize(otherSize);
