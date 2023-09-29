@@ -1,3 +1,7 @@
+//Only the title of the class and the template was given to me (eg "template<typename E> class ArrayList{}".) 
+//Credit : Professor William Iverson at Bellevue College, WA. 
+
+
 #pragma once
 
 //CS212: Create an ArrayList
