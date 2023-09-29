@@ -34,7 +34,6 @@ public:
 
 	E set(int, E);
 	string to_string() const;
-	//string to_string() const;
 private:
 	int internalIndex = 0;
 	int arraySize = 0;
@@ -168,18 +167,6 @@ string ArrayList<E>::to_string() const {
 	str << ']';
 	return str.str();
 }
-
-/*
-template<typename E>
-void ArrayList<E>::resize(int increase) {
-	int oldSize = arraySize;
-	arraySize += increase;
-	E* newList = new E[arraySize];
-	memcpy(newList, list, (oldSize*sizeof(E)) );
-	//delete[] list;
-	list = newList;
-}*/
-
 
 template<typename E>
 void ArrayList<E>::resize(int increase) {
