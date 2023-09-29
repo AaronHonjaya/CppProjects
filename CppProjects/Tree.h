@@ -1,19 +1,36 @@
+//This is the BST framework that was given to me by the Professor. Credit is below. 
+//I did added a visited boolean to the TreeNode struct (labeled with comments). Everything else was given. 
+
+// Binary Search Tree (TreeSet)
+// Code from Daniel Liang, C++ Data Structures, Georgia Southern University
+//
+// changed significantly by W.P. Iverson
+// Bellevue College, WA
+// Spring 2023
+
 #pragma once
-// the basic nodes for tree
+import <BST_iterator>
+
 template<typename T>
 class TreeNode
 {
 public:
-    T element; // Element contained in the node
-    TreeNode<T>* left; // Pointer to the left child
-    TreeNode<T>* right; // Pointer to the right child
+    T element; 
+    TreeNode<T>* left;
+    TreeNode<T>* right; 
+
+    //added
     bool visited;
-    TreeNode(T element) // Constructor
+
+    TreeNode(T element) 
     {
         this->element = element;
         left = NULL;
         right = NULL;
+
+        //added
         visited = false;
+        
     }
 };
 
@@ -68,7 +85,6 @@ TreeSet<T>::TreeSet(T elements[], int arraySize)
     }
 }
 
-/* Copy constructor */
 template <typename T>
 TreeSet<T>::TreeSet(TreeSet<T>& tree)
 {
@@ -77,7 +93,6 @@ TreeSet<T>::TreeSet(TreeSet<T>& tree)
     copy(tree.root); // Recursively copy nodes to this tree
 }
 
-/* Copies the element from the specified tree to this tree */
 template <typename T>
 void TreeSet<T>::copy(TreeNode<T>* root)
 {
@@ -89,7 +104,6 @@ void TreeSet<T>::copy(TreeNode<T>* root)
     }
 }
 
-/* Destructor */
 template <typename T>
 TreeSet<T>::~TreeSet()
 {
