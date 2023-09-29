@@ -1,5 +1,5 @@
 //Only the title of the class and the template was given to me (eg "template<typename E> class ArrayList{}".) 
-//Some method declarations may have also been a given such as "void resize(int increase)", but the actual body/function was written by me. 
+//Some method declarations may have also been a given such as "void resize(int increase)", but the actual body of the method was written by me. 
 //Credit : Professor William Iverson at Bellevue College, WA. 
 
 
